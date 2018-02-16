@@ -109,6 +109,11 @@ public class Graph{
             print_line.printf( "%s" + "%n", "])");
             print_line.printf( "%s" + "%n", "plt.figure(num=None, figsize=(8,6), dpi=80, facecolor='w', edgecolor='k')");
             print_line.printf( "%s" + "%n", "plt.errorbar(x,y,yerr=err,fmt='x')");
+            String[] xSplit=X.get(0).split("/");
+            String[] ySplit=Y.get(0).split("/");
+            print_line.printf( "%s" + "%n", "plt.xlabel(\""+X.get(0)+"\")");
+            print_line.printf( "%s" + "%n", "plt.title(\""+ySplit[0]+" vs "+xSplit[0]+"\")");
+            print_line.printf( "%s" + "%n", "plt.ylabel(\""+Y.get(0)+"\")");
             print_line.printf( "%s" + "%n", "plt.savefig(\""+saveName+"\")");
             print_line.close();
             

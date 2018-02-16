@@ -7,4 +7,7 @@ y=n.array([1964,1944,1926,1908,1895,1877,1862,1847,1829,1816,1801,1791,1770,1758
 err=n.array([5,5,5,5,5,5,5,5,5,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3])
 plt.figure(num=None, figsize=(8,6), dpi=80, facecolor='w', edgecolor='k')
 plt.errorbar(x,y,yerr=err,fmt='x')
+plt.xlabel("Time/s")
+plt.title("Pin vs Time")
+plt.ylabel("Pin/mb")
 plt.savefig("Figures/Test.png")
