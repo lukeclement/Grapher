@@ -18,6 +18,11 @@ public class Graph{
         String pythonCode="graph.py";
         String line=null;
         
+        System.out.println("Name of figure to produce");
+        System.out.print(">> ");
+        String saveName="Figures/";
+        saveName += scan.nextLine();
+        saveName += ".png";
         //Getting values for x, y and y error
         //Assuming starting document starts as:
         /*
@@ -104,7 +109,7 @@ public class Graph{
             print_line.printf( "%s" + "%n", "])");
             print_line.printf( "%s" + "%n", "plt.figure(num=None, figsize=(8,6), dpi=80, facecolor='w', edgecolor='k')");
             print_line.printf( "%s" + "%n", "plt.errorbar(x,y,yerr=err,fmt='x')");
-            print_line.printf( "%s" + "%n", "plt.savefig(\"figure.png\")");
+            print_line.printf( "%s" + "%n", "plt.savefig(\""+saveName+"\")");
             print_line.close();
             
             System.out.println("Python coded!");
@@ -117,8 +122,9 @@ public class Graph{
         System.out.println("Executing python...");
         Process p;
         try{
-            p=Runtime.getRuntime().exec("python graph.py");
+            p = Runtime.getRuntime().exec("python graph.py");
             p.waitFor();
+            System.out.println("Finished successfully!");
         }catch(Exception ex){
             System.out.println("Something has went wrong!");
             System.out.println(ex);
